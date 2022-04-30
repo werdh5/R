@@ -39,21 +39,20 @@ from config import (
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f"""ههݪاެ حبيب [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) ❤️‍🔥\n
-اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇.
-
--› MᥲᎥꪀƚᥲᎥꪀᥱძ ხy -› [S᥆ᥙrᥴᥱ](http://t.me/ProX_TEaM)
--› ᖇᎥgɦƚ᥉ ხy -› [Dᥱ᥎ᥱᥣ᥆ρᥱr](http://t.me/XQXQQ)
+        f"""⌁ : إهلا بك عزيزي  [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) \n
+⌁ : انا بوت تشغيل الاغاني المتعددة في المجموعات .
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("⌁ : أضفني الى مجموعتك .", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
+                    InlineKeyboardButton("⌁ : طريقه التشغيل .", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton(" اެݪاۅاެمࢪ", callback_data="command_list"),
-                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("⌁ : الاوامر .", callback_data="command_list"),
+                    InlineKeyboardButton("⌁ : المطور .", url=f"https://t.me/{OWNER_USERNAME}")
+                ],[
+                    InlineKeyboardButton("⌁ : قناة السورس .", url=f"https://t.me/{GROUP_SUPPORT}"),
                 ],
             ]
         ),
