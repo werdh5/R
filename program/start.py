@@ -84,21 +84,20 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_text(
-        f"""ههݪاެ حبيب {message.from_user.mention()} ❤️‍🔥\n
-اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇.
-
--› MᥲᎥꪀƚᥲᎥꪀᥱძ ხy -› [S᥆ᥙrᥴᥱ](http://t.me/ProX_TEaM)
--› ᖇᎥgɦƚ᥉ ხy -› [Dᥱ᥎ᥱᥣ᥆ρᥱr](http://t.me/XQXQQ)
+        f"""⌁ : إهلا بك عزيزي  {message.from_user.mention()} ❤️‍🔥\n
+⌁ : انا بوت تشغيل الاغاني المتعددة في المجموعات .
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("⌁ : إضفني الى مجموعتك .", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
+                    InlineKeyboardButton("⌁ : طريقه التشغيل .", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("اެݪاۅاެمࢪ", callback_data="command_list"),
-                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_USERNAME}")                    
+                    InlineKeyboardButton("⌁ : الاوامر .", callback_data="command_list"),
+                    InlineKeyboardButton("⌁ : المطور .", url=f"https://t.me/{OWNER_USERNAME}")
+                ],[
+                    InlineKeyboardButton("⌁ : قناة السورس .", url=f"https://t.me/{GROUP_SUPPORT}"), 
                 ],
             ]
         ),
