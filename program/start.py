@@ -84,7 +84,7 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_text(
-        f"""⌁ : إهلا بك عزيزي  {message.from_user.mention()} ❤️‍🔥\n
+        f"""⌁ : إهلا بك عزيزي  {message.from_user.mention()} \n
 ⌁ : انا بوت تشغيل الاغاني المتعددة في المجموعات .
 """,
         reply_markup=InlineKeyboardMarkup(
