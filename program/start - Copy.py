@@ -77,10 +77,10 @@ async def _human_time_duration(seconds):
 
 
 @Client.on_message(
-    command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited
+    command(["help", f"help@{BOT_USERNAME}"]) & filters.private & ~filters.edited
 )
 @check_blacklist()
-async def start_(c: Client, message: Message):
+async def help(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_text(
