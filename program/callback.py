@@ -109,6 +109,27 @@ async def commands_set(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("SEZR_PROO"))
 @check_blacklist()
+async def commands_set(_, query: CallbackQuery):
+    user_id = query.from_user.id
+    await query.answer("👍🏻قائمة الاوامر")
+    await query.edit_message_text(
+        f"""- تابع الازرار في الاسفل ↓
+
+يمديك تشوف كل اوامر البوت عن طريق زر اوامر البوت""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("-› اوامر البوت", callback_data="user_command"),
+                ],[           
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
+                ],
+            ]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("SEZR_PROO"))
+@check_blacklist()
 async def SEZR_PROO(_, query: CallbackQuery):
     user_id = query.from_user.id
     await query.answer("سيزر بيحبك 🥺💞")
