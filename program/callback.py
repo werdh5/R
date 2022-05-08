@@ -39,20 +39,22 @@ from config import (
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f"""⌁ : إهلا بك عزيزي  [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) \n
-⌁ : انا بوت تشغيل الاغاني المتعددة في المجموعات .
+        f"""🎯 : إهلا بك عزيزي  [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) \n
+🤖 : انا بوت تشغيل الاغاني المتعددة في المجموعات .
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⌁ : أضفني الى مجموعتك .", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("⚡️ : أضفني الى مجموعتك .", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("⌁ : طريقه التشغيل .", callback_data="user_guide")
+                    InlineKeyboardButton("✅ : طريقه التشغيل .", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("⌁ : الاوامر .", callback_data="command_list"),
-                    InlineKeyboardButton("⌁ : المطور .", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("📚 : الاوامر .", callback_data="command_list"),
+                    InlineKeyboardButton("🧑‍💻 : المطور .", url=f"https://t.me/{OWNER_USERNAME}")
                 ],[
-                    InlineKeyboardButton("⌁ : قناة السورس .", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("𝗔𝗕𝗗𝗢 𝗔𝗦𝗜𝗟 - ســـــــــيزر", callback_data="SEZR_PROO"),
+                ],[                             
+                    InlineKeyboardButton("🌐 : قناة البوت .", url=f"https://t.me/{GROUP_SUPPORT}"),
                 ],
             ]
         ),
@@ -97,12 +99,81 @@ async def commands_set(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton("-› اوامر البوت", callback_data="user_command"),
-                ],[             
+                ],[           
                     InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
                 ],
             ]
         ),
     )
+
+
+@Client.on_callback_query(filters.regex("SEZR_PROO"))
+@check_blacklist()
+async def commands_set(_, query: CallbackQuery):
+    user_id = query.from_user.id
+    await query.answer("سيزر بيحبك 🥺💞")
+    await query.edit_message_text(
+        f"""- تابع الازرار في الاسفل ↓
+
+يمديك تشوف كل اوامر البوت عن طريق زر اوامر البوت""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("🌐 : قــنــوات ســيــزر", callback_data="SEZR_PROO1"),
+                ],[  
+                    InlineKeyboardButton("🎌 : جــروبــات ســيــزر", callback_data="SEZR_PROO2"),
+                ],[                                             
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
+                ],
+            ]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("SEZR_PROO1"))
+@check_blacklist()
+async def commands_set(_, query: CallbackQuery):
+    user_id = query.from_user.id
+    await query.answer("قنوات سيزر يقلبي🥺💞")
+    await query.edit_message_text(
+      f"""- مرحبا بك عزيزي... ↓
+هنا  يوجد قنوات المطور سيزر😀💞""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("⌁ : القناة الاولي .", url=f"https://t.me/RBBOU"),
+                ],[  
+                    InlineKeyboardButton("⌁ : القناة الثانية .", url=f"https://t.me/co0oo0"),
+                ],[                                             
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="SEZR_PROO")
+                ],
+            ]
+        ),
+    )
+
+
+
+@Client.on_callback_query(filters.regex("SEZR_PROO2"))
+@check_blacklist()
+async def commands_set(_, query: CallbackQuery):
+    user_id = query.from_user.id
+    await query.answer("جروبات سيزر يقلبي🥺💞")
+    await query.edit_message_text(
+      f"""- مرحبا بك عزيزي... ↓
+هنا  يوجد جروبات المطور سيزر 😀💞""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("⌁ : الجروب الاول .", url=f"https://t.me/RBBOU"),
+                ],[  
+                    InlineKeyboardButton("⌁ : الجروب الثاني .", url=f"https://t.me/RBBOU"),
+                ],[                                             
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="SEZR_PROO")
+                ],
+            ]
+        ),
+    )
+
 
 
 @Client.on_callback_query(filters.regex("user_command"))

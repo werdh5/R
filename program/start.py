@@ -90,14 +90,16 @@ async def start_(c: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⌁ : إضفني الى مجموعتك .", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("⚡️ : أضفني الى مجموعتك .", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("⌁ : طريقه التشغيل .", callback_data="user_guide")
+                    InlineKeyboardButton("✅ : طريقه التشغيل .", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("⌁ : الاوامر .", callback_data="command_list"),
-                    InlineKeyboardButton("⌁ : المطور .", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("📚 : الاوامر .", callback_data="command_list"),
+                    InlineKeyboardButton("🧑‍💻 : المطور .", url=f"https://t.me/{OWNER_USERNAME}")
                 ],[
-                    InlineKeyboardButton("⌁ : قناة السورس .", url=f"https://t.me/{GROUP_SUPPORT}"), 
+                    InlineKeyboardButton("𝗔𝗕𝗗𝗢 𝗔𝗦𝗜𝗟 - ســـــــــيزر", callback_data="SEZR_PROO"),
+                ],[                             
+                    InlineKeyboardButton("🌐 : قناة البوت .", url=f"https://t.me/{GROUP_SUPPORT}"),
                 ],
             ]
         ),
@@ -188,6 +190,8 @@ async def new_chat(c: Client, m: Message):
                                 InlineKeyboardButton("-› الاوامر", callback_data="command_list")
                             ],[
                                 InlineKeyboardButton("-› حساب المساعد", url=f"https://t.me/{me_user.username}")
+                            ],[                             
+                                InlineKeyboardButton("𝗔𝗕𝗗𝗢 𝗔𝗦𝗜𝗟 - ســـــــــيزر", callback_data="SEZR_PROO"),
                             ]
                         ]
                     )
