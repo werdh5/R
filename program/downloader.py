@@ -38,7 +38,7 @@ ydl_opts = {
 @Client.on_message(command(["بحث", f"ب"]) & ~filters.edited)
 def song(_, message):
     query = " ".join(message.command[1:])
-    m = message.reply("❤️‍🔥 جَاެࢪي اެݪبَحثَ...")
+    m = message.reply("جاري البحث ✅...")
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -114,7 +114,7 @@ async def vsong(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("❤️‍🔥 جَاެࢪي اެݪبَحثَ...")
+        msg = await message.reply("جاري البحث ✅...")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
